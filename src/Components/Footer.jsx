@@ -1,69 +1,60 @@
-import { useState } from 'react';
-import Facebook from '../img/facebook.png'
-import Instagram from '../img/instagram.png'
-import Twitter from '../img/twitter.png'
+import fondo from '../img/fondo.jpg'; // Asegúrate de que la imagen esté en la ruta correcta.
 
 function Footer() {
   return (
+    <footer
+      className="relative bg-gray-900 text-gray-200 py-16"
+      style={{ backgroundImage: `url(${fondo})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+    >
+      {/* Capa oscura con desenfoque */}
+      <div className="absolute inset-0 bg-black bg-opacity-80 filter blur-sm"></div> 
 
-    <footer className="bg-red-900 text-gray-300 py-8">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="text-center md:text-left">
-          <h2 className="text-white text-lg font-semibold mb-4">Síguenos en redes sociales</h2>
-          <ul className="flex justify-center md:justify-start space-x-6">
-            <li>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <img src={Facebook} alt="Facebook" className="w-8 h-8 hover:opacity-75" />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                <img src={Twitter} alt="Twitter" className="w-8 h-8 hover:opacity-75" />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                <img src={Instagram} alt="Instagram" className="w-8 h-8 hover:opacity-75" />
-              </a>
-            </li>
+      <div className="relative container mx-auto text-center space-y-8">
+        <div>
+          <h2 className="text-2xl font-bold text-white">¿Quieres enterarte de nuestros descuentos?</h2>
+          <p className="text-gray-300">Déjanos tu correo electrónico.</p>
+          <form className="mt-4 flex justify-center">
+            <input
+              type="email"
+              placeholder="tu correo electrónico"
+              className="px-4 py-2 rounded-l-lg focus:outline-none"
+            />
+            <button className="bg-green-500 text-white px-4 py-2 rounded-r-lg hover:bg-green-600 transition">
+              Enviar
+            </button>
+          </form>
+          <p className="text-orange-700 mt-4" id="confirmationMessage">
+            ¡Gracias por suscribirte a nuestros descuentos!
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <ul className="space-y-4">
+            <li><a href="#" className="text-gray-300 hover:underline">Inicio</a></li>
+            <li><a href="#SobreNosotros" className="text-gray-300 hover:underline">Sobre nosotros</a></li>
+            <li><a href="#menu" className="text-gray-300 hover:underline">Menú</a></li>
+            <li><a href="#galeria" className="text-gray-300 hover:underline">Galeria de imagenes</a></li>
+          </ul>
+
+          <ul className="space-y-4">
+            <li><a href="https://www.facebook.com" className="text-gray-300 hover:underline">Facebook</a></li>
+            <li><a href="https://www.instagram.com" className="text-gray-300 hover:underline">Instagram</a></li>
+            <li><a href="https://www.twitter.com" className="text-gray-300 hover:underline">Twitter</a></li>
+          </ul>
+
+          <ul className="space-y-4">
+            <li><a href="tel:+88123123456" className="text-gray-300 hover:underline">Llámanos : 3133523289</a></li>
+            <li><a href="https://g.co/kgs/HpVFnXw" className="text-gray-300 hover:underline">Google Maps</a></li>
+            <li><p className="text-gray-300">Abierto 5pm - 12 pm</p></li>
           </ul>
         </div>
-        <div className="text-center">
-          <h2 className="text-white text-lg font-semibold mb-4">Nuestro Contacto</h2>
-          <p>Teléfono: +123 456 7890</p>
+
+        <div className="mt-8">
+          <p className="text-gray-500">&copy; 2024 Mambo Kings. Todos los derechos reservados.</p>
         </div>
-        <div className="text-center">
-          <h2 className="text-white text-lg font-semibold mb-4">Donde Encontrarnos</h2>
-          <p>Dirección: Calle 13 #7-69, Neiva, Huila</p>
-        </div>
-        <div>
-          <h3 className="text-white text-lg font-semibold mb-4">Hora de Apertura</h3>
-          <p>Lunes a Viernes: 8:00 AM - 11:30 PM</p>
-          <p>Sabado a Domingo: 9:00 AM - 10:00 PM</p>
-        </div>
-        <div className="text-center md:text-right">
-          <h2 className="text-white text-lg font-semibold mb-4">Nuestra Ubicación</h2>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.95373531531643!3d-37.81627917975159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5779f58f23e29c!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1631317056533!5m2!1sen!2sau"
-            width="100%"
-            height="150"
-            allowFullScreen=""
-            loading="lazy"
-            className="rounded-lg"
-            title="Google Maps"
-          ></iframe>
-        </div>
-      </div>
-      <div className="text-center mt-8 border-t border-gray-600 pt-4">
-        <p>&copy; 2024 Mambo Kings.Todos los derechos reservados.</p>
       </div>
     </footer>
-
-
   );
-
-
-
 }
 
-export default Footer
+export default Footer;
